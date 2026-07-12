@@ -1,0 +1,37 @@
+{
+  "name": "Langchain",
+
+  "dockerComposeFile": "../docker-compose.yml",
+
+  "service": "langchain_ai_agent",
+
+  "workspaceFolder": "/app",
+
+  "overrideCommand": true,
+
+  "shutdownAction": "stopCompose",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-toolsai.jupyter"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/app/.venv/bin/python"
+      }
+    }
+  },
+
+  "postCreateCommand": "uv sync --group dev",
+
+  "postStartCommand": "pkill -f 'jupyter-lab' 2>/dev/null; nohup uv run jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root --IdentityProvider.token= --ServerApp.token= --ServerApp.password= > /tmp/jupyter.log 2>&1 &",
+
+  "forwardPorts": [8888],
+  "portsAttributes": {
+    "8888": {
+      "label": "Jupyter Lab",
+      "onAutoForward": "openBrowserOnce"
+    }
+  }
+}

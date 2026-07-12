@@ -1,0 +1,53 @@
+[project]
+name = "tutorial"
+version = "0.1.0"
+description = "Langchain AI Agent"
+readme = "README.md"
+requires-python = ">=3.12"
+
+dependencies = [
+    "chromadb",
+    "faiss-cpu",
+    "google-generativeai",
+    "langchain",
+    "langchain-chroma",
+    "langchain-community",
+    "langchain-core",
+    "langchain-google-genai",
+    "langchain-groq",
+    "langchain-huggingface",
+    "langchain-text-splitters",
+    "langchain-openai",
+    "langgraph",
+    "langsmith",
+    "pymupdf",
+    "pypdf",
+    "python-dotenv",
+    "qdrant-client",
+    "sentence-transformers",
+    "streamlit",
+    "torch",
+    "torchvision",
+    "transformers",
+]
+
+[dependency-groups]
+dev = [
+    "ipykernel",
+    "jupyterlab",
+    "notebook",
+]
+
+[tool.uv]
+constraint-dependencies = [
+    "onnxruntime<=1.23.2",
+]
+
+[tool.uv.sources]
+torch = [{ index = "pytorch-cpu" }]
+torchvision = [{ index = "pytorch-cpu" }]
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true

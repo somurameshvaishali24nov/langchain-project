@@ -29,7 +29,9 @@ dependencies = [
     "torch",
     "torchvision",
     "transformers",
-    "langchain_tavily"
+    "langchain_tavily",
+    "langchain-mcp-adapters",
+    "mcp"
 ]
 
 [dependency-groups]

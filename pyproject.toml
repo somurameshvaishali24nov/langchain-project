@@ -7,6 +7,7 @@ requires-python = ">=3.12"
 
 dependencies = [
     "chromadb",
+    "crewai[tools,litellm]",
     "faiss-cpu",
     "google-generativeai",
     "langchain",
@@ -16,22 +17,27 @@ dependencies = [
     "langchain-google-genai",
     "langchain-groq",
     "langchain-huggingface",
-    "langchain-text-splitters",
+    "langchain-mcp-adapters",
     "langchain-openai",
+    "langchain-text-splitters",
+    "langchain-tavily",
     "langgraph",
     "langsmith",
+    "litellm",
+    "mcp",
+    "pydantic",
     "pymupdf",
     "pypdf",
     "python-dotenv",
     "qdrant-client",
+    "requests",
     "sentence-transformers",
     "streamlit",
+    "tavily-python",
     "torch",
     "torchvision",
     "transformers",
-    "langchain_tavily",
-    "langchain-mcp-adapters",
-    "mcp"
+    "fpdf2"
 ]
 
 [dependency-groups]
